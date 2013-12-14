@@ -1,7 +1,7 @@
 (function() {
   var io;
-  var port = process.env.PORT || 4000;
-  io = require('socket.io').listen(port);
+  //var port = process.env.PORT || 4000;
+  io = require('socket.io').listen(4000);
 
   io.sockets.on('connection', function(socket) {
     socket.on('drawClick', function(data) {

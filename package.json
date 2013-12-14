@@ -5,6 +5,10 @@
   "scripts": {
     "start": "node server.js"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dmesu/pictomovie-node.git"
+  },
   "dependencies": {
     "socket.io": "latest"
   }

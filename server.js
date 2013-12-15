@@ -13,6 +13,8 @@
 
   console.log('http server listening on %d', port);
 
+   io.disable('strict ip policy');
+
   io.sockets.on('connection', function(socket) {
     socket.on('drawClick', function(data) {
       socket.broadcast.emit('draw', {

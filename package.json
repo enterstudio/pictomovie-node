@@ -1,6 +1,7 @@
 {
   "name": "pictomovie-node",
   "version": "0.0.1",
+  "private": true,
   "scripts": {
     "start": "node server.js"
   },
@@ -9,10 +10,7 @@
     "url": "https://github.com/dmesu/pictomovie-node.git"
   },
   "dependencies": {
-    "socket.io": "latest"
-  },
-  "engines": {
-    "node": "0.10.x",
-    "npm": "1.2.x"
+    "socket.io": "latest",
+    "express": "~2.5.8"
   }
 }

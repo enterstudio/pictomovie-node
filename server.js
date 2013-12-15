@@ -1,20 +1,17 @@
 (function() {
-  var express = require('express'),
-    app = module.exports = express.createServer(express.logger()),
-    io = require('socket.io').listen(app);
+
+  var express = require('express')
+  , app = express()
+  , http = require('http')
+  , server = http.createServer(app)
+  , io = require('socket.io').listen(server)
+  , port = process.env.PORT || 4000;
 
   app.use(express.static(__dirname + '/'));
 
-  io.configure(function () {
-    io.set("transports", ["xhr-polling"]);
-    io.set("polling duration", 10);
-  });
+  server.listen(port);
 
-  // Use the port that Heroku provides or default to 5000
-  var port = process.env.PORT || 4000;
-  app.listen(port, function() {
-    console.log("Started express server");
-  });
+  console.log('http server listening on %d', port);
 
   io.sockets.on('connection', function(socket) {
     socket.on('drawClick', function(data) {

@@ -39,13 +39,10 @@
       socket.broadcast.emit('gameStarted');
     });
 
-    socket.on('all_losers', function(data) {
-      socket.broadcast.emit('all_losers');
-    });
-
     socket.on('timer', function(data) {
       socket.broadcast.emit('timer',{
-        count_timer: data.count_timer
+        count_timer: data.count_timer,
+        movie_name: data.movie_name
       });
     });
 

@@ -13,7 +13,8 @@
 
   console.log('http server listening on %d', port);
 
-   io.disable('strict ip policy');
+  io.disable('strict ip policy');
+  io.set('heartbeat interval', 55);
 
   io.sockets.on('connection', function(socket) {
     socket.on('drawClick', function(data) {
